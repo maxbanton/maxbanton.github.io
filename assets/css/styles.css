@@ -42,6 +42,9 @@ a:focus {
 p {
   line-height: 1.5;
 }
+.btn-dl {
+  border: 1px solid #F5F5F5;
+}
 .wrapper {
   background: #42A8C0;
   max-width: 960px;
@@ -227,6 +230,11 @@ p {
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 5px;
+  color: #010102;
+}
+.main-wrapper .project-title a {
+  color: #010102;
+  text-decoration: underline;
 }
 .main-wrapper .projects-section .intro {
   margin-bottom: 30px;

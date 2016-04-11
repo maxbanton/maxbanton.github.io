@@ -44,7 +44,7 @@
             <div class="cv-dl-container container-block">
                 <h2 class="container-block-title">Download CV as a file</h2>
 
-                <a href="assets/pdf/Max_Leonov_PHP_Backend_Software_Developer_CV.pdf" class="btn btn-success btn-block btn-dl">Download CV in PDF format</a>
+                <a id="cv-dl" href="assets/pdf/Max_Leonov_PHP_Backend_Software_Developer_CV.pdf" class="btn btn-success btn-block btn-dl">Download CV in PDF format</a>
             </div>
             
             <div class="contact-container container-block">
@@ -392,6 +392,13 @@
             } else { f(); }
         })(document, window, "yandex_metrika_callbacks");
     </script>
+
+    <script type="text/javascript">
+        $( "#cv-dl" ).click(function() {
+            yaCounter35238580.reachGoal('cv_button_click');
+        });
+    </script>
+
     <noscript><div><img src="https://mc.yandex.ru/watch/35238580" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
 </body>

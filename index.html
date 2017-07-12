@@ -14,6 +14,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.css">
 
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v1">
     <!--[if lt IE 9]>
@@ -39,6 +40,10 @@
                 <h1 class="name">Max Leonov</h1>
                 <h3 class="tagline">Software Developer</h3>
                 <h4 class="location"><i class="fa fa-map-marker"></i> Ukraine</h4>
+                <div>
+                    <h5>My experience</h5>
+                    <span id="experience" class="small"></span>
+                </div>
             </div>
 
             <div class="cv-dl-container container-block">
@@ -226,6 +231,18 @@
                 <div class="intro">
                     <p>Here are some of the projects in which I participated</p>
                 </div>
+                
+                <div class="item">
+                    <span class="project-title">
+                        <a href="https://packagist.org/packages/maxbanton/cwh" target="_blank" rel="nofollow">
+                            AWS CloudWatch logs handler
+                        </a>
+                    </span>
+                    <div class="project-tagline">
+                        Open source library, handler for Monolog logging library (which is De facto standard for all modern PHP projects) which
+                        allows sending log entries to the AWS CloudWatch using Monolog. Currently more then 30K installs reached.
+                    </div>
+                </div>
 
                 <div class="item">
                     <span class="project-title"><a href="http://audiko.net" target="_blank" rel="nofollow">Audiko</a></span>
@@ -369,45 +386,29 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/assets/js/countdown.min.js"></script>
     <script>
         jQuery(document).ready(function($){$(".level-bar-inner").css("width","0"),$(window).on("load",function(){$(".level-bar-inner").each(function(){var n=$(this).data("level");$(this).animate({width:n},800)})})});
     </script>
 
-    <script type="text/javascript">
-        (function (d, w, c) {
-            (w[c] = w[c] || []).push(function() {
-                try {
-                    w.yaCounter35238580 = new Ya.Metrika({
-                        id:35238580,
-                        clickmap:true,
-                        trackLinks:true,
-                        accurateTrackBounce:true,
-                        webvisor:true
-                    });
-                } catch(e) { }
-            });
-
-            var n = d.getElementsByTagName("script")[0],
-                    s = d.createElement("script"),
-                    f = function () { n.parentNode.insertBefore(s, n); };
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-            if (w.opera == "[object Opera]") {
-                d.addEventListener("DOMContentLoaded", f, false);
-            } else { f(); }
-        })(document, window, "yandex_metrika_callbacks");
-    </script>
-
-    <script type="text/javascript">
-        $( "#cv-dl" ).click(function() {
-            yaCounter35238580.reachGoal('cv_button_click');
-            return true;
+    <script>
+        $(document).ready(function () {
+            setInterval(function () {
+                var t = countdown(new Date("01/04/2010"), new Date());
+                $("#experience").text(t.years + " years, " + t.months + " months, " + t.days + " days, " + t.hours + " hours, " + t.minutes + " minutes and " + t.seconds + " seconds");
+            }, 1000);
         });
     </script>
 
-    <noscript><div><img src="https://mc.yandex.ru/watch/35238580" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-44180158-7', 'auto');
+        ga('send', 'pageview');
+    </script>
 
 </body>
 </html>

@@ -1,2 +1,5 @@
-node_modules
-/.idea/
+venv/
+rendercv_output/
+.DS_Store
+resume.yaml
+
